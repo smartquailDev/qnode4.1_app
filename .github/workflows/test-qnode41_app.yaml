@@ -1,4 +1,4 @@
-name: SmartQuail Django-app & Postgress Test
+name: SmartQuail Django-app & Postgress Test Q
 
 on:
   workflow_call:
