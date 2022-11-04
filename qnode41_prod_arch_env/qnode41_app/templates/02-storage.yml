@@ -1,0 +1,31 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: qnode41-pv-volume
+  namespace: qnode41
+  labels:
+    type: local
+    app: qnode41-app
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/mnt/data/"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: qnode41-pv-claim
+  namespace: qnode41
+  labels:
+    app: qnode41-app
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi

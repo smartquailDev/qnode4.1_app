@@ -1,0 +1,533 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qnode41-app-v1
+  namespace: qnode41
+spec:
+  selector:
+    matchLabels:
+      app: qnode41-app-v1
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: qnode41-app-v1
+    spec:
+      containers:
+      - name: qnode41-app-v1
+        image: smartquail/qnode4.1_app:latest
+        resources:
+         requests:
+            memory: "64Mi"
+            cpu: "200m"
+         limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 9000
+        env:
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DEBUG
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: ENV_ALLOWED_HOST
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DJANGO_SECRET_KEY
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DJANGO_SUPERUSER_USERNAME
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DJANGO_SUPERUSER_PASSWORD
+
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DJANGO_SUPERUSER_EMAIL
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DJANGO_SUPERUSER_KEY
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: AWS_ACCESS_KEY_ID
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: AWS_SECRET_ACCESS_KEY
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: POSTGRES_READY
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key:  POSTGRES_DB
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: POSTGRES_PASSWORD
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: POSTGRES_USER
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: POSTGRES_HOST
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: POSTGRES_PORT
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: LANG
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: LC_COLLATE
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: REDIS_HOST
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: RABBITMQ_DEFAULT_USER
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: RABBITMQ_DEFAULT_PASS
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: SOCIAL_AUTH_FACEBOOK_KEY
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: SOCIAL_AUTH_FACEBOOK_SECRET
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: SOCIAL_AUTH_FACEBOOK_SCOPE
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: SOCIAL_AUTH_TWITTER_KEY
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: SOCIAL_AUTH_TWITTER_SECRET
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: SOCIAL_AUTH_GOOGLE_OAUTH2_KEY
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key:  SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: GA_KEY_CONTENT_ENV
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: BRAINTREE_M_ID
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: BRAINTREE_KEY
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: BRAINTREE_PRIVATE_KEY
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: BROKER_URL
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: RESULT_BACKEND
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: CELERY_BROKER_URL
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: CELERY_RESULT_BACKEND
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_HOST 
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_PORT 
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_USE_TLS 
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_HOST_USER
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_HOST_PASSWORD
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DEFAULT_FROM_EMAIL 
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_BACKEND 
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_USE_SSL 
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: COMPOSE_PROJECT_NAME
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: ACME_DEFAULT_EMAIL
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DOMAIN
+
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qnode41-app-v2
+  namespace: qnode41
+spec:
+  selector:
+    matchLabels:
+      app: qnode41-app-v2
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: qnode41-app-v2
+    spec:
+      containers:
+      - name: qnode41-app-v2
+        image: smartquail/qnode4.1_app:latest
+        resources:
+         requests:
+            memory: "64Mi"
+            cpu: "200m"
+         limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 9000
+        env:
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DEBUG
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: ENV_ALLOWED_HOST
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DJANGO_SECRET_KEY
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DJANGO_SUPERUSER_USERNAME
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DJANGO_SUPERUSER_PASSWORD
+
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DJANGO_SUPERUSER_EMAIL
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DJANGO_SUPERUSER_KEY
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: AWS_ACCESS_KEY_ID
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: AWS_SECRET_ACCESS_KEY
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: POSTGRES_READY
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key:  POSTGRES_DB
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: POSTGRES_PASSWORD
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: POSTGRES_USER
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: POSTGRES_HOST
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: POSTGRES_PORT
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: LANG
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: LC_COLLATE
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: REDIS_HOST
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: RABBITMQ_DEFAULT_USER
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: RABBITMQ_DEFAULT_PASS
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: SOCIAL_AUTH_FACEBOOK_KEY
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: SOCIAL_AUTH_FACEBOOK_SECRET
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: SOCIAL_AUTH_FACEBOOK_SCOPE
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: SOCIAL_AUTH_TWITTER_KEY
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: SOCIAL_AUTH_TWITTER_SECRET
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: SOCIAL_AUTH_GOOGLE_OAUTH2_KEY
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key:  SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: GA_KEY_CONTENT_ENV
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: BRAINTREE_M_ID
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: BRAINTREE_KEY
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: BRAINTREE_PRIVATE_KEY
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: BROKER_URL
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: RESULT_BACKEND
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: CELERY_BROKER_URL
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: CELERY_RESULT_BACKEND
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_HOST 
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_PORT 
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_USE_TLS 
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_HOST_USER
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_HOST_PASSWORD
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DEFAULT_FROM_EMAIL 
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_BACKEND 
+         - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: EMAIL_USE_SSL 
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: COMPOSE_PROJECT_NAME
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: ACME_DEFAULT_EMAIL
+        - name: 
+           valueFrom: 
+             secretKeyRef:
+               name: qnode41_secret
+               key: DOMAIN
+
+      
+         
+
+
+
+
+         
+
+      
+

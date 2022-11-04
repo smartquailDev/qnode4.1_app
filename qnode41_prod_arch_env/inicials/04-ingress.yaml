@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: qnode41-ingress
+  namespace: qnode41
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: qnode41-ingress
+  rules:
+  - http:
+      paths:
+      - path: /qnode41-app-v1
+        pathType: Prefix
+        backend:
+          service:
+            name: qnode41-app-v1-svc
+            port:
+              number: 80
+  - http:
+      paths:
+      - path: /qnode41-app-v2
+        pathType: Prefix
+        backend:
+          service:
+            name: qnode41-app-v2-svc
+            port:
+              number: 80
