@@ -31,8 +31,6 @@ data:
   REDIS_HOST=redis
   REDIS_PORT=6379
 
-#Rabbit
-
   RABBITMQ_DEFAULT_USER=admin
   RABBITMQ_DEFAULT_PASS=devpass
 
@@ -46,13 +44,9 @@ data:
 
   SOCIAL_AUTH_GOOGLE_OAUTH2_KEY= ''
   SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET= ''
-
-#Wagtail ENV
-
   GA_KEY_CONTENT_ENV= 'content_of_your_key.json'
   GA_VIEW_ID_ENV= 'ga:xxxxxxxx'
 
-#E commerce
   BRAINTREE_M_ID= 'zc7jnwjr8g2yxz5x' 
   BRAINTREE_KEY= '666hrp5s3cjzttxf'
   BRAINTREE_PRIVATE_KEY= '8de62714c9701b4f85587e28f8f8fba9'
@@ -68,9 +62,8 @@ data:
   EMAIL_USE_TLS=  True
   EMAIL_HOST_USER= smartquail.info@gmail.com
   EMAIL_HOST_PASSWORD= pzmblsxbqyvdzuxz
-  # DEFAULT_FROM_EMAIL= EMAIL_HOST_USER
+  DEFAULT_FROM_EMAIL= EMAIL_HOST_USER
   EMAIL_BACKEND= django.core.mail.backends.smtp.EmailBackend
-#EMAIL_USE_TLS       = True
   EMAIL_USE_SSL= False
 
   COMPOSE_PROJECT_NAME=smartquail
