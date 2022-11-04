@@ -70,6 +70,8 @@ runcmd:
   - k3s kubectl apply -f .
   #instalamos Qnode_41
   - cd /kube/qnode4.1_app/qnode41_prod_arch_env/qnode41_app/templates/
+  - k3s kubectl -n qnode41 create secret generic qnode41-secret --from-env-file=.env
+
   - k3s kubectl apply -f .
   - k3s kubectl -n qnode41 apply -f 06-QNODE41-INGRESS.yaml
 
