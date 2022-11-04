@@ -9,6 +9,7 @@ metadata:
 spec:
   selector:
     app: qnode41-app
+  type: NodePort
   ports:
    - name: http
      protocol: TCP
