@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = str(os.environ.get('DEBUG')) == "1"
+#DEBUG = str(os.environ.get('DEBUG')) == "1"
 #ENV_ALLOWED_HOST = os.environ.get("ENV_ALLOWED_HOST")
 ALLOWED_HOSTS = ['*']
 #if ENV_ALLOWED_HOST:
@@ -154,7 +154,7 @@ from django.urls import reverse_lazy
 LOGIN_REDIRECT_URL = reverse_lazy('course_list')
 
 BATON = {
-    'SITE_HEADER': 'SmartQuail',
+    'SITE_HEADER': '<a><img src="/static/img/m2.png" height="39px"></a><p>si pertenece al staff de SmartQuail,Inc. LLene el siguiente formulario</p>',
     'SITE_TITLE': 'Baton',
     'INDEX_TITLE': 'Site administration',
     'SUPPORT_HREF': 'https://github.com/otto-torino/django-baton/issues',
@@ -170,7 +170,7 @@ BATON = {
     'MENU_TITLE': 'Canvas',
     'MESSAGES_TOASTS': False,
     'GRAVATAR_DEFAULT_IMG': 'retro',
-    'LOGIN_SPLASH': '/static/core/img/login-splash.png',
+    'LOGIN_SPLASH': '/static/img/login_splash.jpg',
     'SEARCH_FIELD': {
         'label': 'Search contents...',
         'url': '/search/',
@@ -275,39 +275,10 @@ WSGI_APPLICATION = 'qnode41_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
-DB_USERNAME = os.environ.get("POSTGRES_USER")
-DB_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
-DB_DATABASE = os.environ.get("POSTGRES_DB")
-DB_HOST = os.environ.get("POSTGRES_HOST")
-DB_PORT = os.environ.get("POSTGRES_PORT")
-DB_IS_AVIAL = all([
-    DB_USERNAME,
-    DB_PASSWORD,
-    DB_DATABASE,
-    DB_HOST,
-    DB_PORT
-])
+#POSTGRES_READY=str(os.environ.get('POSTGRES_READY_ENV'))
 
-POSTGRES_READY=str(os.environ.get('POSTGRES_READY'))=="1"
 
-if DB_IS_AVIAL and POSTGRES_READY:
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': DB_DATABASE,
-        "USER": DB_USERNAME,
-        "PASSWORD": DB_PASSWORD,
-        "HOST": DB_HOST,
-        "PORT": DB_PORT,
-    }
-}
 
 
 
@@ -355,21 +326,5 @@ USE_TZ = True
 
 
 
-#Static files DevMod
 
-MEDIA_URL = "/media/"
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
-#STATICFILES_DIRS = [BASE_DIR / "staticfiles"]  
-#STATIC_ROOT = STATIC_ROOT = BASE_DIR / "static"
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
- #Deploy Project- Don`t touch 
-STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "static"
-
-STATICFILES_DIRS = [
-    BASE_DIR / "staticfiles"
-]
-
-from .cdn.conf import * #noqa
 
