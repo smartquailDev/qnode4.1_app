@@ -154,8 +154,8 @@ from django.urls import reverse_lazy
 LOGIN_REDIRECT_URL = reverse_lazy('course_list')
 
 BATON = {
-    'SITE_HEADER': '<a><img src="/static/img/m2.png" height="39px"></a><p>si pertenece al staff de SmartQuail,Inc. LLene el siguiente formulario</p>',
-    'SITE_TITLE': 'Baton',
+    'SITE_HEADER': '<a href="#"><img src="/static/img/m2.png" height="39px"></a><p>si pertenece al staff de SmartQuail,Inc. LLene el siguiente formulario</p>',
+    'SITE_TITLE': 'SBA-SmartQuail,Inc',
     'INDEX_TITLE': 'Site administration',
     'SUPPORT_HREF': 'https://github.com/otto-torino/django-baton/issues',
     'COPYRIGHT': 'copyright © 2022 <a href="https://www.otto.to.it">Be Smarty que tan smarty?100%, Be a SamrtQuail</a>', # noqa
