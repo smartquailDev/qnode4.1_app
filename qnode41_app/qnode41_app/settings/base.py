@@ -154,9 +154,9 @@ from django.urls import reverse_lazy
 LOGIN_REDIRECT_URL = reverse_lazy('course_list')
 
 BATON = {
-    'SITE_HEADER': '<a href="#"><img src="/static/img/m2.png" height="40px"></a>',
+    'SITE_HEADER': '<a href="#"><img src="/static/img/m2.png" height="26px"></a>',
     'SITE_TITLE': 'SBA-SmartQuail,Inc',
-    'INDEX_TITLE': 'Site administration',
+    'INDEX_TITLE': 'SmartBusinessAnalytics',
     'SUPPORT_HREF': 'https://github.com/otto-torino/django-baton/issues',
     'COPYRIGHT': 'copyright © 2022 <a href="https://www.otto.to.it">Be Smarty que tan smarty?100%, Be a SamrtQuail</a>', # noqa
     'POWERED_BY': '<a href="https://www.otto.to.it">SmartQuail technology foundation</a>',
@@ -166,7 +166,7 @@ BATON = {
     'CHANGELIST_FILTERS_IN_MODAL': True,
     'CHANGELIST_FILTERS_ALWAYS_OPEN': False,
     'CHANGELIST_FILTERS_FORM': True,
-    'MENU_ALWAYS_COLLAPSED': False,
+    'MENU_ALWAYS_COLLAPSED': True,
     'MENU_TITLE': 'Canvas',
     'MESSAGES_TOASTS': False,
     'GRAVATAR_DEFAULT_IMG': 'retro',
@@ -176,7 +176,7 @@ BATON = {
         'url': '/search/',
     },
     'MENU': (
-        { 'type': 'title', 'label': 'main', 'apps': ('auth', ) },
+        { 'type': 'title', 'label': 'SmartQuail', 'apps': ('auth', ) },
         {
             'type': 'app',
             'name': 'auth',
