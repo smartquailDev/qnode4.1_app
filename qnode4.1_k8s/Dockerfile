@@ -19,6 +19,8 @@ COPY ./requirements.txt /requirements.txt
 COPY ./scripts /scripts
 COPY ./uwsgi_prod.ini /${NODE_VERSION}/${NODE_APP_NAME}/uwsgi_prod.ini
 COPY ./baton.min.js /${NODE_VERSION}/${NODE_APP_NAME}/baton.min.js
+#COPY ./baton.min.js /${NODE_VERSION}/${NODE_APP_NAME}/${NODE_APP_NAME}/staticfiles/baton/app/baton/baton.min.js
+
 COPY ./qnode_ascii-art.txt /${NODE_VERSION}/${NODE_APP_NAME}/qnode_art.txt
 
 #COPY ./.env /qnode0.1_app/qnode01_app/.env 

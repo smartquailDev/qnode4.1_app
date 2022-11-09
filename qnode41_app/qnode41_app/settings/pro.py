@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG=  str(os.environ.get('DEBUG')) 
+DEBUG=  "0"
 
 
 
@@ -24,7 +24,7 @@ DB_IS_AVIAL = all([
     DB_PORT
 ])
 
-POSTGRES_READY=str(os.environ.get('POSTGRES_READY_ENV'))=="0"
+POSTGRES_READY="1"
 if DB_IS_AVIAL and POSTGRES_READY:
     DATABASES = {
     'default': {
