@@ -40,17 +40,17 @@ if DB_IS_AVIAL and POSTGRES_READY:
 #Static files DevMod
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'mediafiles')
 #STATICFILES_DIRS = [BASE_DIR / "staticfiles"]  
 #STATIC_ROOT = STATIC_ROOT = BASE_DIR / "static"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
  #Deploy Project- Don`t touch 
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_DIRS = [
-    BASE_DIR / "staticfiles"
+    BASE_DIR / "static"
 ]
 
 from .cdn.conf import * #noqa
