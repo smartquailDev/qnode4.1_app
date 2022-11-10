@@ -20,7 +20,7 @@ spec:
       containers:
         - name: qnode41-app
           image: smartquail/qnode41_app:latest
-          imagePullPolicy: "IfNotPresent"
+          imagePullPolicy: "Always"
           ports:
             - containerPort: 9000
           resources:
