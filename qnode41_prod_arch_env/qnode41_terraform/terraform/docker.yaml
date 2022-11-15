@@ -53,7 +53,7 @@ runcmd:
   - git config --global user.email "smartquail.dev@gmail.com"
   - git clone https://github.com/smartquailDev/qnode4.1_app.git
   - cd  /kube/qnode4.1_app/qnode41_app/
-  - k3s kubectl -n qnode41 create secret generic qnode41-secret --from-file=.env
+  - k3s kubectl -n qnode41 create secret generic qnode41-secret --from-env-file=.env
   #Instalamos Ingress
   - cd  /kube/qnode4.1_app/qnode41_prod_arch_env/qnode41_ingress-nginx/templates/
   - k3s kubectl apply -f .
@@ -70,7 +70,7 @@ runcmd:
   - k3s kubectl apply -f .
   #instalamos Qnode_41
   - cd /kube/qnode4.1_app/qnode41_prod_arch_env/qnode41_app/templates/
-  - k3s kubectl -n qnode41 create secret generic qnode41-secret --from-env-file=.env
+  - k3s kubectl -n qnode41 create secret generic qnode41-secret --from-env-file=.env_prod
 
   - k3s kubectl apply -f .
   - k3s kubectl -n qnode41 apply -f 06-QNODE41-INGRESS.yaml
