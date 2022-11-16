@@ -3,10 +3,10 @@ kind: Ingress
 metadata:
   name: qnode41-ingress
   namespace: qnode41
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+ # annotations:
+ #   nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx
+ # ingressClassName: nginx
   rules:
   - http:
       paths:
