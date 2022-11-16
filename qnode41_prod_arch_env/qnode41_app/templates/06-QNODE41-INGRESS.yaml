@@ -6,7 +6,6 @@ metadata:
  # annotations:
  #   nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
- ingressClassName: traefik-role
   rules:
   - http:
       paths:
@@ -16,4 +15,4 @@ spec:
           service:
             name: qnode41-svc
             port:
-              name: http
+              number: 80
