@@ -16,4 +16,4 @@ spec:
           service:
             name: qnode41-svc
             port:
-              number: 80
+              name: http
