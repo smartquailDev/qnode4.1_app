@@ -103,8 +103,4 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
-
-
-
-
 from .cdn.conf import * #noqa

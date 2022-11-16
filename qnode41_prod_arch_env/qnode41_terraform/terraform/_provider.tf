@@ -1,6 +1,6 @@
 variable "digitalocean_token" {
   description = "Digital Ocean Token:qnd41"
-  default     = "dop_v1_72f21c1ce4701118fe2fc89dd0f744b3263694f35c4a7e7de59b1c7852071979"
+  default     = "dop_v1_63b70c2ed4bbbdfcb907976398fa9f36dbdb045a1b5c4548076214d55ae4799d"
 }
 
 variable "spaces_access_id" {
