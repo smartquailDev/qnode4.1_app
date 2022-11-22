@@ -1,0 +1,58 @@
+version: '3.9'
+
+services:
+  qnode41_app:
+    image: smartquail/qnode41_app:latest
+    environment:
+      - PORT=9000
+    env_file:
+      - .env_stage 
+    depends_on:
+      - smartquaildb
+    expose:
+      - 9000
+    ports:
+      - "9000:9000"
+    volumes:
+      - static-data-qnode41:/qnode4.1_app/qnode41_app/staticfiles
+      - static-data-qnode41:/qnode4.1_app/qnode41_app/media
+    networks: 
+      - lansmartquail
+   # command: sh -c "chmod +x /scripts/migrations.sh && sh /scripts/migrations.sh && sh /scripts/run.sh"
+
+  smartquaildb:
+    image: postgres:13-alpine
+    restart: always
+    command: -p 5432
+    env_file:
+      - .env_stage
+    ports:
+      - "5432:5432"
+    expose:
+     - 5432
+    volumes:
+      - smartquaildb_data:/var/lib/postgresql/data/
+    networks: 
+      - lansmartquail
+
+  redis:
+    image: redis:3.0
+    restart: always
+    expose:
+      - 6388
+    ports:
+      - "6388:6388"
+    volumes:
+      - redis_data:/data
+    entrypoint: redis-server --appendonly yes --port 6380
+    networks: 
+      - lansmartquail
+
+volumes:
+  smartquaildb_data:
+  redis_data:
+  static-data-qnode41:
+
+networks: 
+   lansmartquail:
+       driver: bridge
