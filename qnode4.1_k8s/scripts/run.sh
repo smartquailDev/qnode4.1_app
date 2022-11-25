@@ -18,7 +18,7 @@ python manage.py collectstatic --noinput
 #python django-admin compilemessages 
 
 
-uwsgi --http-socket :9000 --workers 9 --master --enable-threads --module qnode41_app.wsgi --ini uwsgi_prod.ini
+uwsgi --http :9000 --workers 9 --master --enable-threads --module qnode41_app.wsgi --ini uwsgi_prod.ini
 
 #python manage.py listen_port25 --noinput
 

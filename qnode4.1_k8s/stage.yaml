@@ -20,6 +20,20 @@ services:
       - lansmartquail
    # command: sh -c "chmod +x /scripts/migrations.sh && sh /scripts/migrations.sh && sh /scripts/run.sh"
 
+  qnode41_proxy:
+    image: smartquail/qnode41_nginx:dev
+    env_file:
+      - .env_stage
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes: 
+      - static-data-qnode41:/qnode4.1_app/qnode41_app/staticfiles
+      - static-data-qnode41:/qnode4.1_app/qnode41_app/media
+      - static-data-qnode41:/qnode4.1_app/qnode41_app/static
+    networks: 
+      - lansmartquail
+
   smartquaildb:
     image: postgres:13-alpine
     restart: always
