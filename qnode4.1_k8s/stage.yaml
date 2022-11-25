@@ -3,6 +3,7 @@ version: '3.9'
 services:
   qnode41_app:
     image: smartquail/qnode41_app:latest
+    restart: unless-stopped
     environment:
       - PORT=9000
     env_file:
@@ -24,6 +25,8 @@ services:
     image: smartquail/qnode41_nginx:dev
     env_file:
       - .env_stage
+    depends_on:
+      - qnode41_app
     ports:
       - "80:80"
       - "443:443"
