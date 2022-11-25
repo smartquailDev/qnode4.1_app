@@ -23,8 +23,11 @@ services:
 
   qnode41_proxy:
     image: smartquail/qnode41_nginx:dev
+    restart: always
     env_file:
       - .env_stage
+    environment:
+      - PORT=80
     depends_on:
       - qnode41_app
     ports:
