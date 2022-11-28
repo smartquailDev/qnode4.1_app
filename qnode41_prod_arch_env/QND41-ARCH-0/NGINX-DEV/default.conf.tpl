@@ -3,7 +3,7 @@ server {
     server_name                127.0.0.1 localhost 0.0.0.0; 
     
 location /static {
-    alias /qnode4.1_app/qnode41_app/staticfiles;
+    alias /qnode4.1_app/qnode41_app/qnode41_app/static;
     client_max_body_size    1000M;
 }
 

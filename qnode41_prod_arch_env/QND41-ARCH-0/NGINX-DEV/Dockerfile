@@ -15,10 +15,12 @@ ENV APP_PORT=9000
 
 USER root
 
-RUN mkdir -p /qnode4.1_app/qnode41_app/staticfiles && \
-    chmod 755 /qnode4.1_app/qnode41_app/staticfiles && \
+RUN mkdir -p /qnode4.1_app/qnode41_app/qnode41_app/staticfiles && \
+    chmod 755 /qnode4.1_app/qnode41_app/qnode41_app/staticfiles && \
     mkdir -p /qnode4.1_app/qnode41_app/media && \
     chmod 755 /qnode4.1_app/qnode41_app/media && \
+    mkdir -p /qnode4.1_app/qnode41_app/qnode41_app/static && \
+    chmod 755 /qnode4.1_app/qnode41_app/qnode41_app/static && \
 
     touch /etc/nginx/conf.d/default.conf && \
     chown nginx:nginx /etc/nginx/conf.d/default.conf && \
@@ -26,6 +28,7 @@ RUN mkdir -p /qnode4.1_app/qnode41_app/staticfiles && \
 
 VOLUME /qnode4.1_app/qnode41_app/staticfiles
 VOLUME /qnode4.1_app/qnode41_app/mediafiles
+VOLUME /qnode4.1_app/qnode41_app/static
 
 USER nginx
 #ENTRYPOINT [ "/entrypoint.sh" ]
