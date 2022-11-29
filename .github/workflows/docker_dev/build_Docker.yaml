@@ -10,7 +10,7 @@ on:
  
 jobs:
   test_qnode41_app:
-    uses: smartquailDev/qnode4.1_app/.github/workflows/test-qnode41_app.yaml@main
+    uses: smartquailDev/qnode4.1_app/.github/workflows/docker_dev/test-qnode41_app.yaml@main
   Docker_qnode41:
     runs-on: ubuntu-latest
     needs: [test_qnode41_app]
