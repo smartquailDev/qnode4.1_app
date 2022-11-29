@@ -1,11 +1,12 @@
 django>=3.2,<4.0
 django-baton
 #Wagtail
-wagtail==4.1.1
+wagtail>=3.0,<4.0
 
 django-social-share
 wagtailgmaps
 wagalytics==1.3
+
 
 requests
 celery
