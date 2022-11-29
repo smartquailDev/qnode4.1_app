@@ -224,6 +224,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'qnode41_app.wsgi.application'
 
+WAGTAILADMIN_BASE_URL =  os.environ.get('DOMAINS')
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
