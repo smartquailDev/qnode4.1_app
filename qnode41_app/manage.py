@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import pathlib
 from dotenv import load_dotenv
 
 def main():
@@ -19,5 +20,6 @@ def main():
 
 
 if __name__ == '__main__':
+
     load_dotenv()
     main()
