@@ -15,11 +15,11 @@ DATABASES = {
 
 BATON = {
     'SITE_HEADER': '<a href="#"><img src="/static/img/m2.png" height="26px"></a>',
-    'SITE_TITLE': 'SBA-SmartQuail,Inc',
-    'INDEX_TITLE': 'SmartBusinessAnalytics',
-    'SUPPORT_HREF': 'https://github.com/otto-torino/django-baton/issues',
-    'COPYRIGHT': 'copyright © 2022 <a href="https://www.otto.to.it">Be Smarty que tan smarty?100%, Be a SamrtQuail</a>', # noqa
-    'POWERED_BY': '<a href="https://www.otto.to.it">SmartQuail technology foundation</a>',
+    'SITE_TITLE': '',
+    'INDEX_TITLE': 'TODO EN ORDEN CLEAN & BUILDING CIA. LTDA.-BUSINESS CONSULTING',
+    'SUPPORT_HREF': '#',
+    'COPYRIGHT': '<a href="#"><img src="/static/img/m2.png" height="18px"></a>&nbsp;&nbsp; copyright © 2022', # noqa
+    'POWERED_BY': '<a href="#"><img src="/static/img/logo_smartquailgray.png" height="13px"</a>',
     'CONFIRM_UNSAVED_CHANGES': True,
     'SHOW_MULTIPART_UPLOADING': True,
     'ENABLE_IMAGES_PREVIEW': True,
@@ -33,7 +33,7 @@ BATON = {
     'LOGIN_SPLASH': '/static/img/login_splash.jpg',
     'SEARCH_FIELD': {
         'label': 'Search contents...',
-        'url': '/search/',
+         'url': '/search/',
     },
     'MENU': (
         { 'type': 'title', 'label': 'SmartQuail', 'apps': ('auth', ) },

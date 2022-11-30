@@ -7,13 +7,14 @@ load_dotenv(str(ENV_FILE_PATH))
 DEBUG=  "1"
 
 
+
 BATON = {
     'SITE_HEADER': '<a href="#"><img src="/static/img/m2.png" height="26px"></a>',
     'SITE_TITLE': 'SBA-SmartQuail,Inc',
     'INDEX_TITLE': 'SmartBusinessAnalytics',
     'SUPPORT_HREF': 'https://github.com/otto-torino/django-baton/issues',
     'COPYRIGHT': 'copyright © 2022 <a href="https://www.otto.to.it">Be Smarty que tan smarty?100%, Be a SamrtQuail</a>', # noqa
-    'POWERED_BY': '<a href="https://www.otto.to.it">SmartQuail technology foundation</a>',
+    'POWERED_BY': '<a href="#"><img src="/static/img/logo_smartquailgray.png" height="26px"</a>',
     'CONFIRM_UNSAVED_CHANGES': True,
     'SHOW_MULTIPART_UPLOADING': True,
     'ENABLE_IMAGES_PREVIEW': True,

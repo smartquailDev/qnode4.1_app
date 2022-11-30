@@ -2,7 +2,7 @@
 .dashboard {
 
   #content {
-    background-image: linear-gradient(#3d3e40, #cfd2d5);
+    background-color: #fff;
   }
 
   #content-main {
@@ -85,7 +85,7 @@ background-color: #fff0;
       @extend .mt-3;
 
       background: $dashboard-module-bg;
-      border:1px solid #e30505;
+      border: 3px solid #fff;
     }
 
     .actionlist {
@@ -96,13 +96,14 @@ background-color: #fff0;
   caption {
     @extend .ps-2;
     @extend .pe-2;
-    background: #fff0;
-border: 0px solid #fff0;
-caption-side: top;
+    background: #d43f3f;;
+    border: 0px solid #fff0;
+    caption-side: top;
+    border-radius: 50px;
     
 
     a {
-      color: #d9d7d7;
+      color: #fff;
     }
   }
 
