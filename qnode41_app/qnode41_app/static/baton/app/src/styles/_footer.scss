@@ -1,0 +1,35 @@
+// scss-lint:disable PlaceholderInExtend IdSelector
+.site-footer {
+  @extend .p-3;
+  background: #413b3b;
+  border-top: 14px solid #e30505;
+  bottom: 0;
+  color: #fff;
+  font-size: .9rem;
+  left: 0;
+  margin-top: 10px;
+  position: absolute;
+  width: 100%;
+
+
+  p {
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  a {
+    color: $footer-link-color;
+
+    &:hover {
+      color: $footer-link-color-hover;
+    }
+  }
+
+  .btn-light {
+    color: $footer-support-fg;
+  }
+}
+
+.login #footer {
+  display: none;
+}

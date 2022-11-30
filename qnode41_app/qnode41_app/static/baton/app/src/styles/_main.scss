@@ -1,0 +1,61 @@
+html {
+  background: $navbar-bg;
+  height: 100%;
+}
+
+body {
+  font-weight: 300;
+  min-height: 100%;
+  opacity: 0;
+  transition: opacity .2s linear;
+  color: #f0f0f0;
+
+  &.baton-ready {
+    opacity: 1;
+  }
+}
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: rgb(222, 37, 37);
+  }
+
+  &.btn {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: $font-family-sans-serif;
+}
+
+input[type=checkbox] {
+  @extend .form-check-input;
+}
+
+.clear {
+  clear: both;
+}
+
+// remove django 3.1 sidebar
+#toggle-nav-sidebar,
+#nav-sidebar {
+  display: none !important;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-5px) rotate(5deg); }
+}
