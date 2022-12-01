@@ -209,6 +209,22 @@ BATON = {
                 },
             )
         },
+                 {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Generador de Contratos ',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
          
     ),
 }
