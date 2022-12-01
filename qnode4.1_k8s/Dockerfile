@@ -120,7 +120,7 @@ ENV LANG=es_ES.UTF-8 \
 USER root
 USER ${USER}
 
-
+USER root
 CMD ["run.sh"]
 
 
