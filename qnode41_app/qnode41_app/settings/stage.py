@@ -129,6 +129,23 @@ BATON = {
             )
         },
          { 'type': 'title', 'label': 'Administración Operativa', 'apps': ('auth','todo_en_orden', ) },
+              {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Dpto Marketing',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+         
     ),
 }
 
