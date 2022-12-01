@@ -16,7 +16,7 @@ DATABASES = {
 BATON = {
     'SITE_HEADER': '<a href="#"><img src="/static/img/m2.png" height="26px"></a>',
     'SITE_TITLE': '',
-    'INDEX_TITLE': 'TODO EN ORDEN CLEAN & BUILDING CIA. LTDA.-BUSINESS CONSULTING',
+    'INDEX_TITLE': 'TODO EN ORDEN CLEAN & BUILDING CIA. LTDA.- BUSINESS ANALITYCS CONSULTING',
     'SUPPORT_HREF': '#',
     'COPYRIGHT': '<a href="#"><img src="/static/img/m2.png" height="18px"></a>&nbsp;&nbsp; copyright © 2022', # noqa
     'POWERED_BY': '<a href="#"><img src="/static/img/logo_smartquailgray.png" height="13px"</a>',
@@ -27,7 +27,7 @@ BATON = {
     'CHANGELIST_FILTERS_ALWAYS_OPEN': False,
     'CHANGELIST_FILTERS_FORM': True,
     'MENU_ALWAYS_COLLAPSED': True,
-    'MENU_TITLE': 'Canvas',
+    'MENU_TITLE': 'Todo en Orden',
     'MESSAGES_TOASTS': False,
     'GRAVATAR_DEFAULT_IMG': 'retro',
     'LOGIN_SPLASH': '/static/img/login_splash.jpg',
@@ -36,7 +36,7 @@ BATON = {
          'url': '/search/',
     },
     'MENU': (
-        { 'type': 'title', 'label': 'SmartQuail', 'apps': ('auth', ) },
+        { 'type': 'title', 'label': 'Gerencia', 'apps': ('auth','todo_en_orden', ) },
         {
             'type': 'app',
             'name': 'auth',
@@ -56,14 +56,81 @@ BATON = {
          {
             'type': 'app',
             'name': 'todo_en_orden',
-            'label': 'Gerencia',
-            'icon': 'fa fa-lock',
+            'label': 'Dpto Contable',
+            'icon': 'fa fa-user',
             'models': (
                 {
-                    'name': 'Order',
+                    'name': 'order',
                     'label': 'Clientes'
-                }
-             
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+        {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Dpto Operativo',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+         {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Dpto RRHH',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+        {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Dpto Legal',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+        {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Dpto Marketing',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
             )
         },
         { 'type': 'title', 'label': 'Contents', 'apps': ('flatpages', ) },
@@ -75,6 +142,7 @@ BATON = {
         ] },
     ),
 }
+
 
 
 ADMINS= (

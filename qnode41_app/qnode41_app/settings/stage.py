@@ -10,11 +10,11 @@ DEBUG=  "1"
 
 BATON = {
     'SITE_HEADER': '<a href="#"><img src="/static/img/m2.png" height="26px"></a>',
-    'SITE_TITLE': 'SBA-SmartQuail,Inc',
-    'INDEX_TITLE': 'SmartBusinessAnalytics',
-    'SUPPORT_HREF': 'https://github.com/otto-torino/django-baton/issues',
-    'COPYRIGHT': 'copyright © 2022 <a href="https://www.otto.to.it">Be Smarty que tan smarty?100%, Be a SamrtQuail</a>', # noqa
-    'POWERED_BY': '<a href="#"><img src="/static/img/logo_smartquailgray.png" height="26px"</a>',
+    'SITE_TITLE': '',
+    'INDEX_TITLE': 'TODO EN ORDEN CLEAN & BUILDING CIA. LTDA.- BUSINESS ANALITYCS CONSULTING',
+    'SUPPORT_HREF': '#',
+    'COPYRIGHT': '<a href="#"><img src="/static/img/m2.png" height="18px"></a>&nbsp;&nbsp; copyright © 2022', # noqa
+    'POWERED_BY': '<a href="#"><img src="/static/img/logo_smartquailgray.png" height="13px"</a>',
     'CONFIRM_UNSAVED_CHANGES': True,
     'SHOW_MULTIPART_UPLOADING': True,
     'ENABLE_IMAGES_PREVIEW': True,
@@ -28,10 +28,10 @@ BATON = {
     'LOGIN_SPLASH': '/static/img/login_splash.jpg',
     'SEARCH_FIELD': {
         'label': 'Search contents...',
-        'url': '/search/',
+         'url': '/search/',
     },
     'MENU': (
-        { 'type': 'title', 'label': 'SmartQuail', 'apps': ('auth', ) },
+        { 'type': 'title', 'label': 'Todo En Orden', 'apps': ('auth','todo_en_orden', ) },
         {
             'type': 'app',
             'name': 'auth',
@@ -46,6 +46,23 @@ BATON = {
                     'name': 'group',
                     'label': 'Groups'
                 },
+            )
+        },
+         {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Gerencia',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Cartera de Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+               
             )
         },
         { 'type': 'title', 'label': 'Contents', 'apps': ('flatpages', ) },
