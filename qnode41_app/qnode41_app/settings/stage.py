@@ -22,7 +22,7 @@ BATON = {
     'CHANGELIST_FILTERS_ALWAYS_OPEN': False,
     'CHANGELIST_FILTERS_FORM': True,
     'MENU_ALWAYS_COLLAPSED': True,
-    'MENU_TITLE': 'Canvas',
+    'MENU_TITLE': 'Todo en Orden',
     'MESSAGES_TOASTS': False,
     'GRAVATAR_DEFAULT_IMG': 'retro',
     'LOGIN_SPLASH': '/static/img/login_splash.jpg',
@@ -31,7 +31,7 @@ BATON = {
          'url': '/search/',
     },
     'MENU': (
-        { 'type': 'title', 'label': 'Todo En Orden', 'apps': ('auth','todo_en_orden', ) },
+        { 'type': 'title', 'label': 'Gerencia', 'apps': ('auth','todo_en_orden', ) },
         {
             'type': 'app',
             'name': 'auth',
@@ -51,27 +51,84 @@ BATON = {
          {
             'type': 'app',
             'name': 'todo_en_orden',
-            'label': 'Gerencia',
+            'label': 'Dpto Contable',
             'icon': 'fa fa-user',
             'models': (
                 {
                     'name': 'order',
-                    'label': 'Cartera de Clientes'
+                    'label': 'Clientes'
                 },
                 {
                     'name': 'order',
                     'label': 'Servicios'
                 },
-               
             )
         },
-        { 'type': 'title', 'label': 'Contents', 'apps': ('flatpages', ) },
-        { 'type': 'model', 'label': 'Pages', 'name': 'flatpage', 'app': 'flatpages' },
-        { 'type': 'free', 'label': 'Custom Link', 'url': 'http://www.google.it', 'perms': ('flatpages.add_flatpage', 'auth.change_user') },
-        { 'type': 'free', 'label': 'My parent voice', 'default_open': True, 'children': [
-            { 'type': 'model', 'label': 'A Model', 'name': 'mymodelname', 'app': 'myapp' },
-            { 'type': 'free', 'label': 'Another custom link', 'url': 'http://www.google.it' },
-        ] },
+        {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Dpto Operativo',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+         {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Dpto RRHH',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+        {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Dpto Legal',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+        {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Dpto Marketing',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+         { 'type': 'title', 'label': 'Administración Operativa', 'apps': ('auth','todo_en_orden', ) },
     ),
 }
 

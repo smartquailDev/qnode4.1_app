@@ -133,6 +133,7 @@ BATON = {
                 },
             )
         },
+         { 'type': 'title', 'label': 'Administración Operativa', 'apps': ('auth','todo_en_orden', ) },
         { 'type': 'title', 'label': 'Contents', 'apps': ('flatpages', ) },
         { 'type': 'model', 'label': 'Pages', 'name': 'flatpage', 'app': 'flatpages' },
         { 'type': 'free', 'label': 'Custom Link', 'url': 'http://www.google.it', 'perms': ('flatpages.add_flatpage', 'auth.change_user') },
