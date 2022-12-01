@@ -94,7 +94,10 @@ RUN python -m venv /py && \
     
     #chmod -R u+x /scripts/gunicorn_run.sh &&\
     chmod -R u+x /scripts/run.sh &&\
-    chmod -R +x /scripts
+    chmod -R +x /scripts && \
+    rm /py/lib/python3.9/site-packages/baton/static/baton/app/dist/baton.min.js && \
+    cp /${NODE_VERSION}/${NODE_APP_NAME}/baton.min.js  /py/lib/python3.9/site-packages/baton/static/baton/app/dist/ 
+
 
 RUN  wget https://golang.org/dl/go1.17.2.linux-amd64.tar.gz && \
      tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz && \
