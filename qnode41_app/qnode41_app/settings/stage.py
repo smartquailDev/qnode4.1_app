@@ -132,7 +132,71 @@ BATON = {
               {
             'type': 'app',
             'name': 'todo_en_orden',
-            'label': 'Dpto Marketing',
+            'label': 'Entradas y salidas',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+         {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Propuestas',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+         {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Servicios',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+        {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Insumos Venta',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+         {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Insumos Contratos ',
             'icon': 'fa fa-user',
             'models': (
                 {
