@@ -186,7 +186,7 @@ BATON = {
         {
             'type': 'app',
             'name': 'todo_en_orden',
-            'label': 'Insumos Venta',
+            'label': 'Kardex por Venta',
             'icon': 'fa fa-user',
             'models': (
                 {
@@ -202,7 +202,7 @@ BATON = {
          {
             'type': 'app',
             'name': 'todo_en_orden',
-            'label': 'Insumos Contratos ',
+            'label': 'Kardex por Contrato ',
             'icon': 'fa fa-user',
             'models': (
                 {
@@ -218,7 +218,7 @@ BATON = {
                  {
             'type': 'app',
             'name': 'todo_en_orden',
-            'label': 'Generador de Contratos ',
+            'label': 'Contratos ',
             'icon': 'fa fa-user',
             'models': (
                 {
@@ -231,7 +231,159 @@ BATON = {
                 },
             )
         },
-         
+
+         {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Kardex de herramientas ',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+
+          
+        
+        { 'type': 'title', 'label': 'Administración Contable', 'apps': ('auth','todo_en_orden', ) },
+              {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Cuentas por cobrar',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+         {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Cuentas por pagar',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+         {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Egresos',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+        {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'venta de Insumos',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+         {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Facturación',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+
+        {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Nómina',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+
+                {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'IESS',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Clientes'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Servicios'
+                },
+            )
+        },
+
+          {
+            'type': 'app',
+            'name': 'todo_en_orden',
+            'label': 'Bancos',
+            'icon': 'fa fa-user',
+            'models': (
+                {
+                    'name': 'order',
+                    'label': 'Banco Guayaquil'
+                },
+                {
+                    'name': 'order',
+                    'label': 'Banco Internacional'
+                },
+            )
+        },
+              
     ),
 }
 
