@@ -15,6 +15,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('baton/', include('baton.urls')),
+    path('Orders/', include('orders.urls', namespace='orders')),
+    path('Contracts/', include('contracts.urls', namespace='contracts')),
+    path('services/', include('services.urls', namespace="services")),
     #E-commerce-configs
     #path('coupons/', include('coupons.urls', namespace='coupons')),
     #path('cart/', include('cart.urls', namespace='cart')),
