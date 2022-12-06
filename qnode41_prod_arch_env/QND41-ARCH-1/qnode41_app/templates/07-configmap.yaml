@@ -17,7 +17,7 @@ data:
   PGADMIN_DEFAULT_EMAIL: "smartquail.info@gmail.com"
   PGADMIN_PASSWORD: "smartquaildev1719pass"
   POSTGRES_READY: "1"
-  POSTGRES_DB: "QNODE41_DEV_DB"
+  POSTGRES_DB: "QND41STGDB"
   POSTGRES_PASSWORD: "smartquaildev1719pass"
   POSTGRES_USER: "sqadmindb"
   POSTGRES_HOST: "smartquaildb"

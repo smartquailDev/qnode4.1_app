@@ -103,6 +103,7 @@ INSTALLED_APPS = [
     #'memcache_status',
     'rest_framework',
     'storages',
+    'ckeditor',
 ]
 
 
