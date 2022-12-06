@@ -14,7 +14,7 @@ cp -f /qnode4.1_app/qnode41_app/baton.min.js /py/lib/python3.9/site-packages/bat
 python manage.py migrate --noinput
 python manage.py createsuperuser --email $SUPERUSER_EMAIL --noinput || true
 python manage.py collectstatic --noinput 
-cp -f /qnode4.1_app/qnode41_app/baton.min.js /qnode4.1_app/qnode41_app/qnode41_app/staticfiles/baton/app/dist/
+#cp -f /qnode4.1_app/qnode41_app/baton.min.js /qnode4.1_app/qnode41_app/qnode41_app/staticfiles/baton/app/dist/
 #python manage.py makemessages
 #python django-admin makemessages --all
 #python django-admin compilemessages 

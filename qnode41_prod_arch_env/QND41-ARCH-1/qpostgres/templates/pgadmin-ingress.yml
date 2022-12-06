@@ -4,17 +4,15 @@ metadata:
   name: pgadmin-app-ingress
   namespace: postgres
 spec:
-  # ingressClassName: nginx # use only with k8s version >= 1.18.0
-  tls:
   rules:
-  - host: dev.smartquail.io
+  - host: pgadmin.smartquail.io
     http:
       paths:
-      - path: /
-        pathType: Exact
-        backend:
-          service:
-            name: pgadmin-service
-            port:
-              number: 80
+        - pathType: Prefix
+          path: "/"
+          backend:
+           service:
+             name: pgadmin-service
+             port:
+               number: 80
               
