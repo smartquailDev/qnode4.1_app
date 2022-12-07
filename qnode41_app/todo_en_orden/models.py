@@ -8,6 +8,7 @@ from django.core.validators import MinValueValidator, \
                                    MaxValueValidator
 #from coupons.models import Coupon
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import User
 
 
 
@@ -277,4 +278,129 @@ class OrderItem(models.Model):
     def get_cost(self):
         return self.price * self.quantity
 
+class admininout(models.Model):
+
+        # EDIFICIOS
+    ADRIANPETRO = 'AP'
+    CENTRODIDECOBOSQUE = 'CDB'
+    ALCAZARSALAMANCA = 'ASM'
+    ALCAZARSEVILLA = 'ASV'
+    SIERRA = 'CHS'
+    SANMARTIN = 'CSM'
+    SIRAH = 'CS'
+    VALLECARTAGO ='VC'
+    VILLAMARINAUNO ='VMU'
+    PIAZZATOSCANA = 'PZT'
+    ARISTOPLAZA = 'APZ'
+    ASIEL= 'AL'
+    ASPEN= 'ASP'
+    BATANPLAZA= 'BTP'
+    BIZANCIO= 'BZ'
+    BLUEDIAMOND = 'BD'
+    BRISTOLTORRE = 'BT'
+    CAMPUSCENTRAL = 'CC'
+    CORYBA = 'CB'
+    PEDREGAL = 'PD'
+    FOURSEASONS = 'FS'
+    KORONI = 'KN'
+    KOUROS = 'KS'
+    LAFARGUE = 'LG'
+    METROPOLITAN = 'MN'
+    PLUSDOS = 'PD'
+    PUERTASDELSOL = 'PS'
+    SCALA = 'SL'
+    SOHOGALAXY = 'SG'
+    SORELINA = 'SR'
+    TENISBOULEVARD = 'TB'
+    TERRAZASATRIUM = 'TA'
+    TORRECARE = 'TC'
+    TORREFINLANDIA = 'TF'
+    TORRESOL = 'TS'
+    TORRESUR = 'TSR'
+    TRIER = 'TR'
+    TRINIDAD = 'TD'
+    VERONES = 'VR'
+    VIENA = 'VN'
+    AQUA = 'AQ'
+    HOMEDETAIL = 'HD'
+    KENZE = 'KZ'
+    CASAENPARQUE = 'CP'
+    NOVAKSTATUS = 'NS'
+    PRISMANORTE = 'PN'
+    CRISTIANSILVA = 'CS'
+    TORREDELSOL = 'VN'
+    TORRENOHA = 'TN'
+
+
+
+    EDIFICIOS = [
+        (ADRIANPETRO, 'ADRIAN PETROLEUM SERVICES S.A'),
+        (CENTRODIDECOBOSQUE, 'CENTRO DE DISEÑO Y DECORACIÓN EL BOSQUE'),
+        (ALCAZARSALAMANCA, 'CONJUNTO ALCAZAR DE SALAMANCA'),
+        (SIERRA, 'CONJUNTO HABITACIONAL SIERRA I Y II'),
+        (SANMARTIN, 'CONJUNTO SAN MARTÍN'),
+        (SIRAH, 'CONJUNTO SIRAH'),
+        (VALLECARTAGO, 'CONJUNTO VALLE CARTAGO'),
+        (VILLAMARINAUNO, 'CONJUNTO VIA MARINA UNO'),
+        (PIAZZATOSCANA, 'EDIFICIO PIAZZA TOSCANA'),
+        (ARISTOPLAZA, 'EDIFICIO ARISTO PLAZA'),
+        (ASIEL, 'EDIFICIO ASIEL'),
+        (ASPEN, 'EDIFICIO ASPEN'),
+        (BATANPLAZA, 'EDIFICIO BATAN PLAZA'),
+        (BIZANCIO, 'EDIFICIO BIZANCIO'),
+        (BLUEDIAMOND, 'EDIFICIO BLUE DIAMOND II'),
+        (BRISTOLTORRE, 'EDIFICIO BRISTOL TORRE II'),
+        (CAMPUSCENTRAL, 'EDIFICIO CAMPUS CENTRAL'),
+        (CORYBA, 'EDIFICIO CORYBA'),
+        (PEDREGAL, 'EDIFICIO EL PEDREGAL'),
+        (FOURSEASONS, 'EDIFICIO FOUR SEASONS I'),
+        (KORONI, 'EDIFICIO KORONI'),
+        (KOUROS, 'EDIFICIO KOUROS'),
+        (LAFARGUE, 'EDIFICIO LAFARGUE'),
+        (METROPOLITAN, 'EDIFICIO METROPOLITAN'),
+        (PLUSDOS, 'EDIFICIO PLUS DOS CENTRO DE NEGOCIOS'),
+        (PUERTASDELSOL, 'EDIFICIO PUERTAS DEL SOL'),
+        (SCALA , 'EDIFICIO SCALA '),
+        (SOHOGALAXY, 'EDIFICIO SOHO GALAXY'),
+        (SORELINA, 'EDIFICIO SORELINA'),
+        (TENISBOULEVARD, 'EDIFICIO TENIS BOULEVARD'),
+        (TERRAZASATRIUM, 'EDIFICIO TERRAZAS ATRIUM'),
+        (TORRECARE, 'EDIFICIO TORRE CARE'),
+        (TORREFINLANDIA, 'EDIFICIO TORRE FINLANDIA'),
+        (TORRESOL, 'EDIFICIO TORRE SOL I'),
+        (TRIER, 'EDIFICIO TRIER'),
+        (VERONES, 'EDIFICIO VERONES'),
+        (VIENA, 'EDIFICIO VIENA'),
+        (AQUA, 'FIDEICOMISO INMOBILIARIO PARK QUITO'),
+        (HOMEDETAIL, 'AGENCIA HOMEDETAIL'),
+        (KENZE, 'EDIFICIO KENZE'),
+        (CASAENPARQUE, 'LA CASA EN EL PARQUE'),
+        (NOVAKSTATUS, 'EDIFICIO NOVAK STATUS'),
+        (PRISMANORTE, 'EDIFICIO PRISMA NORTE'),
+        (CRISTIANSILVA, 'CRISTIAN SILVA DOMINGUEZ'),
+        (TORREDELSOL, 'EDIFICIO TORRE DEL SOL'),
+        (TORRENOHA , 'EDIFICIO TORRE NOHA'),
+
+    ]
+
+    edificio = models.CharField(_('Edificio'), max_length=4,choices=EDIFICIOS)
+    operario = models.ForeignKey(User, on_delete=models.CASCADE)
+    ingreso = models.DateTimeField(_('Ingreso'),null=True)
+    salida = models.DateTimeField(_('Salida'),null=True)
+    novedades = models.TextField(_('Novedades'),blank=True)
+    Observaciones = models.TextField(_('Novedades'),blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        #ordering = ('name',)
+        verbose_name = 'Entrada & Salida'
+        verbose_name_plural = 'Entradas & Salidas'
+    
+    #class Meta:
+     #   ordering = ('name',)
+     #   index_together = (('id', 'slug'),)
+
+    def __str__(self):
+        return self.operario
 

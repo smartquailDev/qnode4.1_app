@@ -2,7 +2,7 @@ import csv
 import datetime
 from django.contrib import admin
 from django.http import HttpResponse
-from .models import Order, OrderItem
+from .models import Order, OrderItem,admininout
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django.db.models import Count
@@ -80,3 +80,12 @@ class OrderAdmin(admin.ModelAdmin):
         queryset = super().get_queryset(request)
         queryset = queryset.annotate(total_cost=Count("total"))
         return queryset
+
+@admin.register(admininout)
+class admininoutAdmin(admin.ModelAdmin):
+    list_display = [ 'edificio','operario','ingreso', 'salida','novedades']
+    list_filter = ['edificio','operario']
+    date_hierarchy = 'created'
+    readonly_fields = ['Observaciones']
+    list_per_page = 10
+    actions = [export_to_csv]
