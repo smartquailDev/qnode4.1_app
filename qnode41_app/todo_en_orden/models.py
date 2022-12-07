@@ -384,7 +384,7 @@ class admininout(models.Model):
     ]
 
     edificio = models.CharField(_('Edificio'), max_length=4,choices=EDIFICIOS)
-    operario = models.ForeignKey(User, on_delete=models.CASCADE)
+    operario = models.ForeignKey(User, on_delete=models.CASCADE, blank=True,null=True)
     ingreso = models.DateTimeField(_('Ingreso'),null=True)
     salida = models.DateTimeField(_('Salida'),null=True)
     novedades = models.TextField(_('Novedades'),blank=True)
@@ -402,5 +402,5 @@ class admininout(models.Model):
      #   index_together = (('id', 'slug'),)
 
     def __str__(self):
-        return self.operario
+        return self.edificio
 

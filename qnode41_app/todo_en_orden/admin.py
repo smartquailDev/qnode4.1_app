@@ -86,6 +86,6 @@ class admininoutAdmin(admin.ModelAdmin):
     list_display = [ 'edificio','operario','ingreso', 'salida','novedades']
     list_filter = ['edificio','operario']
     date_hierarchy = 'created'
-    readonly_fields = ['Observaciones']
+    readonly_fields = ['Observaciones','operario']
     list_per_page = 10
     actions = [export_to_csv]
