@@ -98,11 +98,11 @@ INSTALLED_APPS = [
     #'students',
     'embed_video',
     'qr_code',
+    'storages',
     #'actions',
     'baton.autodiscover',   
     #'memcache_status',
     'rest_framework',
-    'storages',
     'ckeditor',
 ]
 
