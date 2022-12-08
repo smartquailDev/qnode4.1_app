@@ -62,6 +62,6 @@ def admin_contract_pdf(request, contract_id):
                             {'contract': contract})
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'filename = contract_{}.pdf"'.format(contract.id)
-    weasyprint.HTML(string=html,  base_url=request.build_absolute_uri() ).write_pdf(response,stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + '/css/pdf.css')], presentational_hints=True)
+    weasyprint.HTML(string=html,  base_url=request.build_absolute_uri() ).write_pdf(response,stylesheets=[weasyprint.CSS('qnode41_app/static/css/pdf.css')], presentational_hints=True)
     return response
 

@@ -9,6 +9,7 @@ from django.contrib.auth import views as auth_views
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
+from qr_code import urls as qr_code_urls
 
 from django.conf.urls.static import static
 
@@ -18,6 +19,7 @@ urlpatterns = [
     path('Orders/', include('orders.urls', namespace='orders')),
     path('Contracts/', include('contracts.urls', namespace='contracts')),
     path('services/', include('services.urls', namespace="services")),
+    path('qr-code/', include(qr_code_urls, namespace="qr_code")),
     #E-commerce-configs
     #path('coupons/', include('coupons.urls', namespace='coupons')),
     #path('cart/', include('cart.urls', namespace='cart')),

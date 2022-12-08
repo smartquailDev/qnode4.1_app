@@ -12,7 +12,7 @@
 <body> 
 <header>
 <div id="image" style="display:inline;">
- <img src="{% static 'img/sbllogo.png' %} " align="left"  width="30%">
+ <img src="{% static 'img/sbllogo.png' %} " align="left"  width="20%">
  </div>
  <div id="texts" style="display:inline; white-space:nowrap;"> 
  <p style="text-align:right;"> 
@@ -34,32 +34,33 @@
 <p style="text-align: justify">
 El presente {{ contract.type}} se suscribe en el {{ contract.city }}, 
 a los {{ contract.created|date:"d " }} días del mes de {{ contract.created|date:"M" }} de {{ contract.created|date:"Y" }},
- entre el C.T.O, Silva Dominguez  Santiago Mauricio,
+ entre el gerente general, Santiago Mauricio Silva Domínguez,
   por sus propios derechos y por los que representa 
   de la compañia SMARTQUAIL S.A.S, a quien en adelante 
-  se le llamará SMARTQUAIL; y,  por otra parte, 
-  la {{ contract.Business_type}} {{ contract.Business_name}}., 
+  se le llamará <b>SMARTQUAIL</b>; y,  por otra parte, 
+  la {{ contract.Business_type}} <b>{{ contract.Business_name}}</b>, 
   representada {{ contract.Law_type}} por {{ contract.Cli_title }} {{ contract.first_name }}  {{ contract.last_name }}, 
   quien en adelante se le denominará {{ contract.Business_name}};
    ambas partes declaran estar domiciliadas 
-   en esta ciudad de {{ contract.city }}, y ser hábiles
+   en la ciudad de distrito metropolitano de {{ contract.city }}, y ser hábiles
     para contratar y obligarse por 
     lo que han convenido en celebrar el 
     presente {{ contract.type}}, sujeto a las siguientes cláusulas y condiciones: 
 </p>
 
+<br>
+
+
+
 {% for item in contract.Acuerdo_items.all %}
 <p style="text-align: justify; font-weight: bold;"> {{ item.clausura }}
-
+  <br>
 {{ item.intro|richtext }}<p> 
-<br>
+
 {% endfor %}
 
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
+
   <table> 
     <thead> 
       <tr> 
@@ -74,11 +75,10 @@ a los {{ contract.created|date:"d " }} días del mes de {{ contract.created|date
     <tbody> 
        
         <tr class=""> 
-          <td>{{ contract.first_name }}  {{ contract.last_name }}</td> 
+          <td style="font-size: 8pt;"><b>{{ contract.first_name }}  {{ contract.last_name }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> Santiago Mauricio Silva Domínguez </b><br><br><br></td> 
           <td></td>
-          <td>Santiago Mauricio Silva Domínguez</td> 
+          <td></td> 
           <td></td>  
-          
         </tr>
         <tr>
         </tr>
@@ -87,16 +87,14 @@ a los {{ contract.created|date:"d " }} días del mes de {{ contract.created|date
         <br>
         <br>
       <tr class=""> 
-          <td>{{ contract.Business_name}}</td> 
+          <td>{{ contract.Business_name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SMARTQUAIL.S.A.S</td> 
           <td></td>
-          <td>CTO, SmartQuail,Inc</td> 
-          <td></td>      
         </tr>
     </tbody> 
   </table> 
-     
-  <span class="">
-  R.U.C/C.I: {{ contract.CI }}
+    
+  <span class="">  
+  R.U.C: {{ contract.CI }}
   </span> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <span class="">
@@ -107,15 +105,25 @@ a los {{ contract.created|date:"d " }} días del mes de {{ contract.created|date
   <br>
   <br>
   <br>
-<div class="signature">
-<img src="{% qr_url_from_text "Contrato realizado por Smartquail.S.A.S" size=2 version=10 image_format='png' %}" alt="Hello World!", style="border: 2px solid #000;border-radius: 25px;">
+  <br>
+  <br>
+  <br>
+  <br>
+
+<div class="signature" style="margin-left: 520px;">
+  
+<img src="{% qr_url_from_text "Contrato realizado por la Abg. Mediavilla Mercedes- CIO SMARTBUSINESSLAW by SMARTQUAIL.S.A.S" size=1 version=10 image_format='png' %}" alt="Hello World!">
+<p style="font-size: 5pt;">SMARTCONTRACT </p>
+  <p style="font-size: 5pt;">AUTH-CERTIFICATE</p>
 </div>
+
+
   <footer>
   <div id="image" style="display:inline;">
   <br>
   
   <br>
- <img src="{% static 'img/SQlogo.png' %} "  width="25%" align="left">
+ <img src="{% static 'img/SQlogo.png' %} "  width="15%" align="left">
  </div>
  <div id="texts" style="display:inline; white-space:nowrap;"> 
  <p style="text-align:center;"> 
