@@ -102,3 +102,4 @@ class AcuerdoItem(models.Model):
     def __str__(self):
         return '{}'.format(self.id)
 
+#--------------- ACUERDO DE CONFIDENCIALIDAD---------
